@@ -1,0 +1,25 @@
+{
+  "name": "studious-nove",
+  "version": "1.0.0",
+  "description": "learn a little nodejs everyday...",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swust-xiaoj/studious-nove.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swust-xiaoj/studious-nove/issues"
+  },
+  "homepage": "https://github.com/swust-xiaoj/studious-nove#readme"
+}

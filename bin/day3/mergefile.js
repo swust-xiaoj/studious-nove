@@ -8,6 +8,7 @@ const MIME = {
 };
 
 const combineFiles = (pathnames, cb) => {
+    console.log(pathnames)
     let output = [];
 
     (function next(i, len) {
@@ -32,21 +33,24 @@ const main = argv => {
         port = config.port || 8080;
 
     http.createServer((req, res) => {
-            const urlInfo = parseURL(root, req.url);
+        const urlInfo = parseURL(root, req.url);
 
-            combineFiles(urlInfo.pathnames, (err, data) => {
-                if (err) {
-                    res.writeHead(404);
-                    res.end(err.message);
-                } else {
-                    res.writeHead(200, {
-                        'Content-Type': urlInfo.mime
-                    });
-                    res.end(data);
-                }
-            });
-        })
-        .listen(port);
+        console.log(urlInfo)
+
+        combineFiles(urlInfo.pathnames, (err, data) => {
+            if (err) {
+                res.writeHead(404);
+                res.end(err.message);
+            } else {
+                res.writeHead(200, {
+                    'Content-Type': urlInfo.mime
+                });
+                res.end(data);
+            }
+        });
+    })
+    .listen(port);
+    console.log('server at port:' + port + ' started...');
 };
 
 const parseURL = (root, url) => {
